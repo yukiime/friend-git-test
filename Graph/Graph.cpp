@@ -7,11 +7,9 @@ using  namespace  std;
 
 Graph::Graph()
 {
-<<<<<<< HEAD
+	//
 	//git test b branch
-=======
 	//git test  branch a
->>>>>>> a
 	// Intialize things that needs to be initialized.
 	//��ʼ��
 	v = "";
