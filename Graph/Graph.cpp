@@ -7,19 +7,20 @@ using  namespace  std;
 
 Graph::Graph()
 {
+	//git test b branch
 	// Intialize things that needs to be initialized.
-	//³õÊ¼»¯
+	//ï¿½ï¿½Ê¼ï¿½ï¿½
 	v = "";
 	w = "";
 }
 Graph::~Graph()
 {
 	// Deallocate all dynamic memory you have allocated
-	//ÊÍ·Å¶¯Ì¬ÄÚ´æ
+	//ï¿½Í·Å¶ï¿½Ì¬ï¿½Ú´ï¿½
 }
 void Graph::addVertex(std::string v)
 {
-	// Adds a vertex(¶¥µã) to the Graph.
+	// Adds a vertex(ï¿½ï¿½ï¿½ï¿½) to the Graph.
 	vertex.push_back(v);
 	v_isVisited.push_back(false);
 	d_shortest.push_back(INT_MAX);
@@ -29,7 +30,7 @@ void Graph::addVertex(std::string v)
 
 void  Graph::initialize() {
 	v_size = vertex.size();
-	//¶Ô²»Ö±½ÓÁ¬µÄÁ½¸öµãÖ®¼ä½øÐÐ¾àÀë¸³Öµ
+	//ï¿½Ô²ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½Ð¾ï¿½ï¿½ë¸³Öµ
 	for (int i = 0; i < v_size; i++) {
 		for (int j = 0; j < v_size; j++) {
 			if ((i != j) && (matrix[i][j] == 0))
@@ -45,7 +46,7 @@ void Graph::addEdge(std::string v, std::string w, int weight)
 	int  end = 0;
 	v_size = vertex.size();
 	matrix.resize(v_size, vector<int>(v_size));
-	// Adds an edge(±ß) to the Graph. 
+	// Adds an edge(ï¿½ï¿½) to the Graph. 
 	start = vToIndex(v);
 	end = vToIndex(w);
 	matrix[start][end] = weight;
@@ -53,7 +54,7 @@ void Graph::addEdge(std::string v, std::string w, int weight)
 }
 
 int Graph::vToIndex(string  v) {
-	//½«Ä³¸öÓÉ×ÖÄ¸±íÊ¾µÄµãÊä³öÎªÆäË÷Òý
+	//ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½Ê¾ï¿½Äµï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	int  index = 0;
 	for (int i = 0; i < v_size; i++) {
 		if (vertex[i] == v)
@@ -65,9 +66,9 @@ int Graph::vToIndex(string  v) {
 
 
 void  Graph::showGraph() {
-	/*matrix.size() : ·µ»Ø¾ØÕóµÄÐÐÊý£¬¼´ vector ÈÝÆ÷ÖÐ°üº¬µÄ vector µÄÊýÁ¿¡£
-		matrix[0].size() : ·µ»Ø¾ØÕóµÄÁÐÊý£¬¼´¾ØÕóµÄÒ»ÐÐÖÐ°üº¬µÄÔªËØÊýÁ¿¡£
-		matrix.empty() : ÅÐ¶Ï¾ØÕóÊÇ·ñÎª¿Õ¡£*/
+	/*matrix.size() : ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ vector ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½ï¿½ï¿½ï¿½ï¿½ vector ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		matrix[0].size() : ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ð°ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		matrix.empty() : ï¿½Ð¶Ï¾ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Îªï¿½Õ¡ï¿½*/
 	if (matrix.empty() == true)
 		cout << "the matrix is empty" << endl;
 	for (int i = 0; i < matrix.size(); i++) {
@@ -132,15 +133,15 @@ int Graph::shortestPath(std::string v, std::string w)
 			}
 		}
 		pre[vToIndex(v)] = -1;
-		/*cout << "¶ÔÔ´µã½øÐÐ²Ù×÷ºóµÄ½á¹û£º" << endl;
+		/*cout << "ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½" << endl;
 		showInfo();*/
 		int  min = INT_MAX;
 		int  min_index = v_size;
 
 		for (int x = 0; x < v_size - 1; x++) {
 			for (int i = 0; i < v_size; i++) {
-				//±éÀúÑ­»·ËùÓÐµÄµã£¬ÓÃÀ´ÕÒµ½»¹Ã»È·¶¨×î¶ÌÂ·¾¶£¬ÇÒdist×îÐ¡µÄ¶¥µãv1
-				//ÓÃminÀ´±íÊ¾×î¶Ì¾àÀë£¬ÓÃmin_indexÀ´±íÊ¾v1µÄË÷Òý
+				//ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄµã£¬ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½Ã»È·ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½distï¿½ï¿½Ð¡ï¿½Ä¶ï¿½ï¿½ï¿½v1
+				//ï¿½ï¿½minï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ì¾ï¿½ï¿½ë£¬ï¿½ï¿½min_indexï¿½ï¿½ï¿½ï¿½Ê¾v1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				if (v_isVisited[i] == true)
 					continue;
 				else {
@@ -153,9 +154,9 @@ int Graph::shortestPath(std::string v, std::string w)
 				}
 
 			}
-			//cout << "Ñ­»·ºó  min:" << min << "   min_index:" << min_index << endl;
+			//cout << "Ñ­ï¿½ï¿½ï¿½ï¿½  min:" << min << "   min_index:" << min_index << endl;
 			v_isVisited[min_index] = true;
-			//¼ì²éËùÓÐÁÚ½Ó×Ôv1µÄ±ß£¬¶ÔÓÚv1µÄÁÚ½Ó¶¥µã
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú½ï¿½ï¿½ï¿½v1ï¿½Ä±ß£ï¿½ï¿½ï¿½ï¿½ï¿½v1ï¿½ï¿½ï¿½Ú½Ó¶ï¿½ï¿½ï¿½
 			for (int j = 0; j < v_size; j++) {
 				if (v_isVisited[j] == false && ((min + matrix[min_index][j]) < d_shortest[j]) && (matrix[min_index][j] != INT_MAX)) {
 					d_shortest[j] = min + matrix[min_index][j];
@@ -166,7 +167,7 @@ int Graph::shortestPath(std::string v, std::string w)
 			min = INT_MAX;
 			min_index = v_size;
 		}
-		//Êä³öÁ½µãÖ®¼äµÄ×î¶Ì¾àÀë
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½
 		int   w_index = vToIndex(w);
 		int  shortest_dis = d_shortest[w_index];
 		return  shortest_dis;
@@ -183,7 +184,7 @@ int  Graph::findPre(int index) {
 std::string Graph::getShortestPath()
 {
 	// Returns the actual path stored in the class variable from shortestPath(...)
-	//¸ù¾Ýpre±íÕÒµ½ÖÕµã¶ÔÓ¦µÄ×î¶ÌÂ·¾¶
+	//ï¿½ï¿½ï¿½ï¿½preï¿½ï¿½ï¿½Òµï¿½ï¿½Õµï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
 	int  index = vToIndex(w);
 	string  path = "";
 	vector<int> stack;
