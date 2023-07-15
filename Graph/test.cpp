@@ -3,17 +3,19 @@
 using namespace std;
 int main()
 {
-
 	Graph g1;
-	// git test 02
-	g1.readGraphFromFile("F://´ó¶şÏÂ//ÃæÏò¶ÔÏóÊı¾İ½á¹¹//testdata//graph2.txt");
+	g1.readGraphFromFile("F://å¤§äºŒä¸‹//é¢å‘å¯¹è±¡æ•°æ®ç»“æ„//testdata//graph2.txt");
 	g1.initialize();
-	cout << "ÏÔÊ¾ÕûÕÅÍ¼Ëù¹¹³ÉµÄÁÚ½×¾ØÕó" << endl;
+	cout << "æ˜¾ç¤ºæ•´å¼ å›¾æ‰€æ„æˆçš„é‚»é˜¶çŸ©é˜µ" << endl;
 	g1.showGraph();
-	/*cout << "³õÊ¼ĞÅÏ¢£º" << endl;
+	/*cout << "åˆå§‹ä¿¡æ¯ï¼š" << endl;
 	g1.showInfo();*/
 	cout << "The shortest distance  is  " << g1.shortestPath("e", "a") << endl;
 	cout << "The shortest path : ";
+
+	// git test04  add  an empty line in test01 branch
+
 	// git_test05  add an empty in main branch
+
 	cout << g1.getShortestPath();
 }
